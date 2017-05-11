@@ -12,6 +12,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <main className="container site-body">
+      <section className="container">
         <header className="text-center">
           <h1>
             Great Deals. Great Savings. Always!
@@ -46,6 +47,7 @@ export default class HomePage extends Component {
         </Row>
 
       </main>
+      </section>
     );
   }
 }
