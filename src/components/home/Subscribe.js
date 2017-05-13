@@ -11,7 +11,7 @@ export default (props) => {
         </p>
         <Row>
           <div className="subscribe-form col-xs-12">
-            <input type="email" placeholder="Enter your email address" className="col-xs-7" />
+            <input type="email" placeholder="Email" className="col-xs-7" />
             <button className="btn btn-primary col-xs-5">SUBSCRIBE</button>
           </div>
         </Row>

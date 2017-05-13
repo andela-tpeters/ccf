@@ -3,12 +3,9 @@ import { Row, Col } from 'react-bootstrap';
 import TopOffers from './TopOffers';
 import PopularStores from './PopularStores';
 import CardList from '../utility/CardList';
-<<<<<<< 8b3f3cb0d89290d0db79d4f9de0c7a31762e3003
 import TabsComponent from './Tabs';
 import Subscribe from './Subscribe';
 import Banner from './Banner';
-=======
->>>>>>> Initial design of homepage components
 import './HomePage.css';
 
 export default class HomePage extends Component {
@@ -34,7 +31,6 @@ export default class HomePage extends Component {
 
         <PopularStores />
         <TabsComponent />
-
         <Row>
           <Col md={8}>
             <CardList />
