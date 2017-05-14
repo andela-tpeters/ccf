@@ -1,0 +1,82 @@
+.main-header {
+  background-color: #156ddd;
+  padding: 20px;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 1880px;
+    height: 345px;
+    border: 3px solid #FFEB38;
+    position: absolute;
+    left: -30%;
+    border-radius: 100%;
+    z-index: -1;
+    top: 65px;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .top-nav {
+
+    .search-container {
+      position: relative;
+
+      .fa-search {
+        color: #115cbb;
+        position: absolute;
+        right: 5%;
+        top: 25%;
+        font-size: 20px;
+        font-weight: 100;
+      }
+    }
+
+    .form-control {
+      border-radius: 2px;
+      font-weight: 300;
+      padding: 20px 12px;
+    }
+
+    .authentication-actions {
+      a {
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0 15px;
+      }
+
+      .signup-btn {
+        background-color: #ffeb38;
+        border-radius: 25px;
+        color: #2a3440;
+        font-weight: 400;
+        padding: 6px 18px;
+      }
+    }
+  }
+
+  .bottom-nav {
+    .navigation-links {
+      padding-top: 20px;
+
+      a {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0 20px;
+      }
+
+      a:first-child {
+        margin-left: 0;
+      }
+
+      .active {
+        border-bottom: 3px solid #ffeb38;
+        padding-bottom: 3px;
+      }
+    }
+  }
+
+}

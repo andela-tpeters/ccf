@@ -1,0 +1,56 @@
+.card {
+  border: 2px solid #f1f1f1;
+  border-radius: 2px;
+  margin-bottom: 30px;
+
+  .card-body {
+    padding: 15px;
+
+    .fa-star-o, .fa-star {
+      color: #f09626;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  }
+
+  .card-footer {
+    background-color: #f1f1f1;
+    color: #b0b0b0;
+    display: flex;
+    font-size: 14px;
+    padding: 20px;
+    justify-content: space-between;
+
+    .fa {
+      color: #8c8c8c;
+    }
+
+    span {
+      font-size: 12px;
+    }
+
+    * {
+      padding: 0;
+    }
+
+    .verification-status {
+      color: #60b22b;
+
+      .fa {
+        color: inherit;
+      }
+
+      * {
+        padding: 0 5px;
+      }
+    }
+
+    .comment-count {
+      flex-grow: 0.7;
+
+      * {
+        padding: 0 5px;
+      }
+    }
+  }
+}
