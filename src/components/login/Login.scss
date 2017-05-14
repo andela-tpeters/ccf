@@ -1,0 +1,124 @@
+.login-btn {
+  &:hover, &:focus {
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    outline: unset;
+  }
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 80px) !important;
+     -moz-transform: translate(0, 80px) !important;
+      -ms-transform: translate(0, 80px) !important;
+       -o-transform: translate(0, 80px) !important;
+          transform: translate(0, 80px) !important;
+}
+
+.round-btn {
+  border-radius: 23px !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  h4 {
+    font-size: 30px;
+    color: #112D50;
+    font-weight: 600;
+  }
+
+  button {
+    margin: 40px 0;
+    border: unset;
+    outline: unset;
+    background-color: #3D5B96;
+    @extend .round-btn;
+  }
+
+  .or-text {
+    position: absolute;
+    display: block;
+    text-transform: uppercase;
+    bottom: -13px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: white;
+    font-weight: lighter;
+  }
+}
+
+.modal-content {
+  border-radius: unset !important;
+  outline: unset;
+  padding: 40px 90px;
+  border: unset;
+  box-shadow: unset !important;
+  
+  .modal-body {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}
+
+.clearfix {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+#login-form {
+  padding-top: 10px;
+
+  &:after {
+   @extend .clearfix;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+    [class^="col-"] {
+      padding: unset;
+    }
+
+    &:after {
+      @extend .clearfix;
+    }
+
+    .login-action-btn {
+      background-color: #156DDD;
+    }
+  }
+
+  .form-control {
+    margin: 5px auto;
+    border-radius: 1px;
+    height: 40px;
+  }
+}
+
+.modal-backdrop {
+  background-color: #0057ff !important;
+
+  .in {
+    opacity: .7 !important;
+  }
+}
+
+.modal-footer {
+  button {
+    background-color: white;
+    @extend .round-btn;
+    color: #156DDD;
+    border-color: #156DDD;
+  }
+}
+
+
