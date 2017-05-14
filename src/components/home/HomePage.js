@@ -46,8 +46,8 @@ export default class HomePage extends Component {
           </Col>
         </Row>
 
-      </main>
       </section>
+      </main>
     );
   }
 }
