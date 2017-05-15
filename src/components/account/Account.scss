@@ -1,0 +1,116 @@
+@import '../variables';
+
+.account-section {
+  background-color: #fafafa;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+
+  .profile-info-wrapper {
+    border: 1px solid #D5E8FE;
+    padding: unset;
+
+    .profile-image {
+      width: 100%;
+      min-height: 200px;
+      background-image: url('http://placehold.it/200x200?text=Profile+Image');
+    }
+
+    .profile-info {
+      padding: 15px;
+      p {
+        line-height: 24px;
+        font-size: 13px;
+        &:first-line {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .default-margin {
+    margin-bottom: 30px;
+  }
+
+  .account-wrapper {
+    max-width: 1200px;
+    overflow: hidden;
+
+    &>div {
+      width: 1200px;
+      padding-top: 40px;
+    }
+  }
+
+  .account-section-header {
+    @extend .default-margin;
+
+    .header {
+      margin-top: 10px;
+      font-weight: 600;
+      margin-bottom: 1px;
+      color: #156DDD;
+    }
+    span {
+      font-size: 12px;
+      opacity: .8;
+    }
+  }
+
+  .home-tabs-wrapper {
+    @extend .default-margin;
+
+    [role="tablist"] {
+      background-color: #f9f9f9;
+      border: 1px solid $border-color;
+    }
+
+    a[role="tab"] {
+      border-radius: unset;
+      margin-right: unset;
+      color: gray;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 400;
+    }
+
+    .tab-content .tab-pane {
+      border: 1px solid $border-color;
+      margin-top: 20px;
+    }
+
+    li[role="presentation"]:first-child a {
+      border-left: unset;
+    }
+
+    li.active[role="presentation"] {
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+
+      a {
+        color: #156DDD;
+      }
+    }
+
+    .home-tab-content {
+      padding: 20px 20px 20px 15px;
+
+      h5 {
+        font-weight: bold;
+      }
+
+      span {
+        opacity: 0.6;
+      }
+    }
+
+    li.active[role="presentation"]:before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      border: 2px solid #156DDD;
+    }
+  }
+}
