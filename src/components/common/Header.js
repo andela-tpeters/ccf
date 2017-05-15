@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import Login from '../login/Login';
+import CategoryDropdown from '../utility/categoryDropdown/CategoryDropdown';
 import './Header.css';
 
 class Header extends Component {
@@ -9,10 +10,12 @@ class Header extends Component {
 
     this.state = {
       show: false,
+      showCategories: false
     }
 
     this.showModal = this.showModal.bind(this);
     this.close = this.close.bind(this);
+    this.showDropdown = this.showDropdown.bind(this);
   }
 
   showModal() {
@@ -21,6 +24,10 @@ class Header extends Component {
 
   close() {
     this.setState({show: false});
+  }
+
+  showDropdown() {
+    this.setState({ showCategories: !this.state.showCategories })
   }
 
 
@@ -51,11 +58,12 @@ class Header extends Component {
           </div>
 
           <div className="bottom-nav">
+            <CategoryDropdown show={this.state.showCategories} />
             <Grid>
               <Row>
                 <Col md={6} mdOffset={2} className="navigation-links">
                   <a href="#" className="active">Home</a>
-                  <a href="#">Categories</a>
+                  <a href="#" onClick={this.showDropdown}>Categories</a>
                   <a href="#">Deals</a>
                   <a href="#">Stores</a>
                   <a href="#">Specials</a>
