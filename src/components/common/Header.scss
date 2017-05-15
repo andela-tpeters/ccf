@@ -17,6 +17,15 @@
 
   a {
     color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: gray;
+      text-decoration: none;
+    }
+    &:focus {
+      color: #FFEB38;
+      text-decoration: none;
+    }
   }
 
   .top-nav {
@@ -58,6 +67,8 @@
   }
 
   .bottom-nav {
+    position: relative;
+
     .navigation-links {
       padding-top: 20px;
 
