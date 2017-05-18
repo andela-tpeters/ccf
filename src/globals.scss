@@ -1,4 +1,5 @@
 body {
+  background-color: #fafafa;
   color: #333;
   margin: 0;
   padding: 0;
@@ -16,4 +17,11 @@ img {
   color: #60b22b;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.offer-action-btn-alt {
+  @extend .offer-action-btn;
+  background-color: #60b22b;
+  color: #fff;
+  font-weight: 400;
 }

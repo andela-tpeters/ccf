@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import {Grid, Row, Col} from 'react-bootstrap';
 import Login from '../login/Login';
 import CategoryDropdown from '../utility/categoryDropdown/CategoryDropdown';
@@ -11,29 +12,28 @@ class Header extends Component {
     this.state = {
       show: false,
       showCategories: false
-    }
-
-    this.showModal = this.showModal.bind(this);
-    this.close = this.close.bind(this);
-    this.showDropdown = this.showDropdown.bind(this);
+    };
   }
 
-  showModal() {
-    this.setState({show: true})
-  };
+  showModal = () => {
+    this.setState({show: true});
+  }
 
-  close() {
+  close = () => {
     this.setState({show: false});
   }
 
-  showDropdown() {
-    this.setState({ showCategories: !this.state.showCategories })
+  showDropdown = () => {
+    this.setState({ showCategories: !this.state.showCategories });
   }
 
+  toggleCurveClass = () => {
+    if (location.pathname === '/') return 'yellow-curve';
+  }
 
   render() {
     return (
-      <header className="main-header">
+      <header className={"main-header " + this.toggleCurveClass()}>
         <Login showModal={this.state.show} close={this.close} />
         <nav className="navigation">
           <div className="top-nav">
@@ -62,7 +62,7 @@ class Header extends Component {
             <Grid>
               <Row>
                 <Col md={6} mdOffset={2} className="navigation-links">
-                  <a href="#" className="active">Home</a>
+                  <NavLink to="/" activeClassName="active">Home</NavLink>
                   <a href="#" onClick={this.showDropdown}>Categories</a>
                   <a href="#">Deals</a>
                   <a href="#">Stores</a>

@@ -1,0 +1,190 @@
+.details-page {
+  .deal-info {
+    padding: 35px;
+
+    .store {
+      margin-top: 30px;
+    }
+
+    .breadcrumbs {
+      color: #909090;
+      font-weight: 300;
+    }
+
+    .deal-name {
+
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .expires-at {
+        background-color: #cd0a24;
+        border-radius: 2px;
+        color: #fff;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 300;
+        margin-left: 5px;
+        margin-bottom: -10px;
+        padding: 4px 12px;
+        text-transform: uppercase;
+        transform: translateY(-3px);
+      }
+    }
+
+    .stats {
+      .verification-status, .comment-count {
+        display: inline-block;
+        margin: 0 10px;
+        color: #909090;
+
+        .fa {
+          font-size: 18px;
+          padding-right: 10px;
+        }
+      }
+
+      .verification-status {
+        color: #60b22b;
+        margin-left: 0;
+      }
+    }
+
+    .offer-action-btn-alt {
+      margin-top: 30px;
+      width: 150px;
+    }
+  }
+
+  .more-info {
+    border-top: 1px solid #d0d0d0;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: #f9f9f9;
+      width: 100%;
+      height: 50px;
+      z-index: -2;
+    }
+
+    &::after {
+      content: '';
+      border-bottom: 1px solid #d0d0d0;
+      position: absolute;
+      top: 49px;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .save-share-btns {
+      position: absolute;
+      right: 0;
+      top: -3px;
+    }
+
+    .tab-btn-save, .tab-btn-share {
+      background: #ddd;
+      border: 0;
+      border-radius: 25px;
+      color: #627081;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 7px 15px;
+      width: 100px;
+      outline: 0;
+
+      &:focus, &:active {
+        outline: 0;
+      }
+    }
+
+    .nav-tabs {
+      border: 0;
+
+      li {
+        a {
+          border: 0;
+          color: #333333;
+          padding: 15px;
+          font-weight: 600;
+          text-transform: uppercase;
+
+          &:hover {
+            background: transparent;
+            box-shadow: none;
+          }
+
+          &:focus, &:active {
+            outline: 0;
+          }
+        }
+      }
+
+      .active {
+        a {
+          background: #fff;
+          border: 1px solid lighten(#d0d0d0, 10%);
+          border-top: 4px solid #156ddd;
+          border-bottom: 1px solid lighten(#d0d0d0, 10%);
+          border-radius: 0;
+          color: #156ddd;
+          padding: 15px 30px;
+          transform: translateY(-5px);
+
+          &:hover {
+            background: #fff;
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      margin-top: 30px;
+    }
+
+    .tab-pane {
+      background: #fff;
+      border: 1px solid #d0d0d0;
+      padding: 30px;
+      margin-bottom: 30px;
+
+      .header {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    #info-pane-2 {
+      .img-wrapper {
+        overflow-x: auto;
+
+        img {
+          margin: 0 10px;
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+  }
+
+  .similar-offers {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+}

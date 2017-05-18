@@ -1,16 +1,18 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
 import HomePage from './home/HomePage';
 import Account from './account/Account';
+import DealDetail from './details/DealDetail';
 
 export default (props) => {
   return (
-    <HashRouter>
-      <App>
+    <BrowserRouter>
+      <App {...props}>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/account' component={Account} />
+        <Route exact path='/details' component={DealDetail} />
       </App>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

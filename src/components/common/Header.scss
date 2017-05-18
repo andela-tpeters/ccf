@@ -3,7 +3,7 @@
   padding: 20px;
   position: relative;
 
-  &::after {
+  &.yellow-curve::after {
     content: '';
     width: 1880px;
     height: 345px;

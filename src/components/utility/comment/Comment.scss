@@ -1,0 +1,15 @@
+.comment {
+  margin: 25px auto;
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 15px;
+
+  &:last-of-type {
+    border: 0;
+  }
+
+  .user-name {
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}

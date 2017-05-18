@@ -11,7 +11,7 @@ export default class Card extends Component {
     }
   }
 
-  showStar () {
+  showStar() {
     if (this.state.starred) {
       return <i className="fa fa-star"></i>;
     } else {
