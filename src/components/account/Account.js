@@ -11,7 +11,7 @@ export default class Account extends Component {
             <Col xs={2} className="profile-info-wrapper">
               <div className="profile-image"></div>
               <Col xs={12} className="profile-info">
-                <p>User FullName<br />Last login 2 days ago<br /><a href="#">Update Profile</a></p>
+                <p>Constance Okoghenun<br />Last login 2 days ago<br /><a href="#">Update your Profile</a></p>
               </Col>
             </Col>
             <Col xs={10}>
@@ -28,19 +28,19 @@ export default class Account extends Component {
                   <Tabs id="home-tabs" defaultActiveKey={1} className="home-tabs-wrapper">
                     <Tab eventKey={1} title="REVIEWS">
                       <div className="home-tab-content">
-                        <h5>Comments</h5>
+                        <h4>Comments</h4>
                         <span>Some description about ...</span>
                       </div>
                     </Tab>
                     <Tab eventKey={2} title="EMAIL SETTINGS">
                       <div className="home-tab-content">
-                        <h5>Email Settings</h5>
+                        <h4>Email Settings</h4>
                         <span>Some settings ...</span>
                       </div>
                     </Tab>
                     <Tab eventKey={3} title="ACCOUNT SETTINGS">
                       <div className="home-tab-content">
-                        <h5>Account Settings</h5>
+                        <h4>Account Settings</h4>
                         <span>Some Account Settings....</span>
                       </div>
                     </Tab>
