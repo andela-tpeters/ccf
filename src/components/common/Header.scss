@@ -63,6 +63,12 @@
         font-weight: 400;
         padding: 6px 18px;
       }
+
+      &.loggedIn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end;
+      }
     }
   }
 
@@ -88,6 +94,17 @@
         padding-bottom: 3px;
       }
     }
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url('http://placehold.it/30x30')
+  }
+
+  .greeting {
+    font-size: 12px !important;
   }
 
 }

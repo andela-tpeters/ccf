@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import {Grid, Row, Col} from 'react-bootstrap';
 import Login from '../login/Login';
 import CategoryDropdown from '../utility/categoryDropdown/CategoryDropdown';
@@ -11,7 +11,8 @@ class Header extends Component {
 
     this.state = {
       show: false,
-      showCategories: false
+      showCategories: false,
+      loggedIn: this.props.loggedIn || false
     };
   }
 
@@ -32,6 +33,7 @@ class Header extends Component {
   }
 
   render() {
+    const { loggedIn } = this.state;
     return (
       <header className={"main-header " + this.toggleCurveClass()}>
         <Login showModal={this.state.show} close={this.close} />
@@ -43,7 +45,16 @@ class Header extends Component {
                   <input type="search" placeholder="Search for stores, brand and more..." className="form-control" />
                   <i className="fa fa-search"></i>
                 </Col>
-
+                { loggedIn ? 
+                <Col md={3} className="text-right authentication-actions loggedIn">
+                  <a href="#" className="login-btn">
+                    <div className="avatar"></div>
+                  </a>
+                  <a href="#" className="login-btn greeting">
+                    Hello Constance <i className="fa fa-caret-down"></i>
+                  </a>
+                </Col>
+                :
                 <Col md={3} className="text-right authentication-actions">
                   <a href="#" className="login-btn" onClick={this.showModal}>
                     Login
@@ -52,7 +63,7 @@ class Header extends Component {
                   <a href="#" className="signup-btn btn btn-rounded btn-default">
                     Signup
                   </a>
-                </Col>
+                </Col>}
               </Row>
             </Grid>
           </div>
@@ -77,4 +88,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

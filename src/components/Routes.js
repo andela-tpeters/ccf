@@ -10,7 +10,7 @@ export default (props) => {
     <BrowserRouter>
       <App {...props}>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/account' component={Account} />
+        <Route exact path='/account' component={Account} loggedIn={true} />
         <Route exact path='/details' component={DealDetail} />
       </App>
     </BrowserRouter>
