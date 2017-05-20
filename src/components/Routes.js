@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import App from './App';
 import HomePage from './home/HomePage';
 import Account from './account/Account';
@@ -10,7 +10,7 @@ import CategoryListing from './categoryListing/CategoryListing';
 
 export default (props) => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <App>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/account' component={Account} loggedIn={true} />
@@ -19,6 +19,6 @@ export default (props) => {
         <Route exact path='/search-listing' component={SearchListing} />
         <Route exact path='/category-listing' component={CategoryListing} />
       </App>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

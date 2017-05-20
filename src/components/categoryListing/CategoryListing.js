@@ -50,6 +50,7 @@ export default class CategoryListing extends Component {
                   </p>
 
                   <div className="sort-action">
+                    <i className="fa fa-caret-down"></i>
                     <select className="form-control">
                       <option value="">Sort by</option>
                     </select>

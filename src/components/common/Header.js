@@ -29,7 +29,7 @@ class Header extends Component {
   }
 
   toggleCurveClass = () => {
-    if (location.pathname === '/') return 'yellow-curve';
+    if (location.hash === '#/') return 'yellow-curve';
   }
 
   render() {
@@ -45,7 +45,7 @@ class Header extends Component {
                   <input type="search" placeholder="Search for stores, brand and more..." className="form-control" />
                   <i className="fa fa-search"></i>
                 </Col>
-                { loggedIn ? 
+                { loggedIn ?
                 <Col md={3} className="text-right authentication-actions loggedIn">
                   <a href="#" className="login-btn">
                     <div className="avatar"></div>
