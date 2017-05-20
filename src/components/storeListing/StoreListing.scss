@@ -1,0 +1,50 @@
+.store-info, .search-info, .info {
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  padding: 15px;
+  position: relative;
+  margin-bottom: 60px;
+
+  .store-logo {
+    position: absolute;
+  }
+
+  .offer-details, .search-details, .category-details {
+    h1 {
+      color: #156ddd;
+      font-size: 28px;
+      font-weight: 600;
+
+      & + p {
+        color: darken(#d0d0d0, 25%);
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.listing-and-filter {
+  .metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+
+    .sort-action {
+      position: relative;
+
+      .fa {
+        position: absolute;
+        right: 5%;
+        top: 14%;
+        font-size: 22px;
+      }
+
+      .form-control {
+        border-radius: 0;
+        width: 200px;
+        -webkit-appearance: none;
+      }
+    }
+  }
+}

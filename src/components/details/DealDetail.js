@@ -5,10 +5,6 @@ import CommentList from '../utility/commentList/CommentList';
 import './DealDetail.css';
 
 export default class DealDetail  extends Component {
-  doSomething = () => {
-    console.log('Something has been done');
-  }
-
   render() {
     return (
       <main className="details-page">
@@ -21,11 +17,9 @@ export default class DealDetail  extends Component {
 
 
               <Col md={8}>
-                <div className="breadcrumbs">
-                  <p>
-                    Home > Categories > Electronics
-                  </p>
-                </div>
+                <p className="breadcrumbs">
+                  Home > Categories > Electronics
+                </p>
 
                 <div className="deal-name">
                   <h1>

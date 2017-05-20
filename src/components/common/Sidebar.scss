@@ -1,0 +1,29 @@
+.sidebar {
+  // margin-top: 60px;
+
+  .sidebar-item {
+    .header {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0c388e;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .options {
+      ul {
+        list-style: none;
+        padding: 0;
+        color: #156ddd;
+
+        li {
+          padding: 3px 0;
+
+          a {
+            color: #156ddd;
+          }
+        }
+      }
+    }
+  }
+}
