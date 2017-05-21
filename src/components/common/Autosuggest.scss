@@ -1,0 +1,58 @@
+.react-autosuggest__suggestions-container {
+    background-color: white;
+    position: absolute;
+    width: 95%;
+    z-index: 10;
+    padding: 0 15px;
+    box-shadow: 0 0 5px #D6E9FE;
+
+    .suggestion-item {
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .offers-text {
+        color: #9F9F9F;
+      }
+
+      .offer-store {
+        font-weight: 600;
+      }
+
+      .store-suggestion-info {
+        margin-left: 5px;
+        float: left;
+      }
+    }
+
+    .store-suggestion-image {
+      width: 35px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      float: left;
+      border: 1px solid #f1f1f1;
+    }
+
+    .react-autosuggest__section-container {
+      margin-bottom: 20px;
+
+      .react-autosuggest__section-title {
+        h6 {
+          font-weight: 600;
+          color: #9F9F9F;
+        }
+      }
+      ul {
+        padding: unset;
+
+        li {
+          list-style-type: none;
+          margin-bottom: 10px;
+          font-size: 11px;
+        }
+      }
+    }
+}

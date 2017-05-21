@@ -1,9 +1,58 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import {Grid, Row, Col} from 'react-bootstrap';
+import AutoSuggest from "react-autosuggest";
 import Login from '../login/Login';
 import CategoryDropdown from '../utility/categoryDropdown/CategoryDropdown';
 import './Header.css';
+import './Autosuggest.css';
+
+const DB = [
+  {
+    title: 'Categories',
+    suggestions: [
+      { name: 'Home & Furniture (392)' },
+      { name: 'Clothing & Fabrics (133)' },
+      { name: "Female Fashion (10)" }
+    ]
+  },
+  {
+    title: 'Stores',
+    suggestions: [
+      { name: 'FILA', image: "http://placehold.it/20x20", offers: 72 },
+      { name: 'Fadango', image: "http://placehold.it/20x20", offers: "9,183"},
+      { name: 'Flipkart', image: "http://placehold.it/20x20", offers: 122}
+    ]
+  }
+];
+
+const getSuggestions = value => {
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
+  return DB.map((record) => {
+    return {
+      title: record.title,
+      suggestions: inputLength === 0 ? [] : record.suggestions.filter(lang =>
+        (new RegExp(inputValue)).test(lang.name.toLowerCase())
+      )
+    }
+  }).filter((section) => section.suggestions.length > 0);
+};
+
+const getSuggestionValue = suggestion => suggestion.name;
+
+const renderSuggestion = suggestion => {
+  return (<div className="suggestion-item">
+    {suggestion.image ? <div className="store-suggestion-image" style={{
+      "background-image": `url(${suggestion.image})`
+    }}></div> : "" }
+    <div className={suggestion.image ? "store-suggestion-info" : ''}>
+      <span className={suggestion.image ? 'offer-store' : '' }>{suggestion.name}</span>
+      {suggestion.offers ? (<span className="offers-text"><br />{suggestion.offers} offers</span>) : ""}
+    </div>
+  </div>);
+};
+
 
 class Header extends Component {
   constructor(props) {
@@ -12,8 +61,14 @@ class Header extends Component {
     this.state = {
       show: false,
       showCategories: false,
-      loggedIn: this.props.loggedIn || false
+      loggedIn: this.props.loggedIn || false,
+      value: '',
+      suggestions: []
     };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
   }
 
   showModal = () => {
@@ -32,8 +87,27 @@ class Header extends Component {
     if (location.hash === '#/') return 'yellow-curve';
   }
 
+  onChange = (event, { newValue }) => {
+    this.setState({
+      value: newValue
+    });
+  };
+
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: getSuggestions(value)
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
   render() {
-    const { loggedIn } = this.state;
+    const { loggedIn , value, suggestions } = this.state;
+    console.log(suggestions);
     return (
       <header className={"main-header " + this.toggleCurveClass()}>
         <Login showModal={this.state.show} close={this.close} />
@@ -42,7 +116,17 @@ class Header extends Component {
             <Grid>
               <Row>
                 <Col md={6} mdOffset={2} className="search-container">
-                  <input type="search" placeholder="Search for stores, brand and more..." className="form-control" />
+                  <AutoSuggest
+                    suggestions={suggestions}
+                    onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                    onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                    getSuggestionValue={getSuggestionValue}
+                    renderSuggestion={renderSuggestion}
+                    multiSection={true}
+                    getSectionSuggestions={(section) => section.suggestions}
+                    renderSectionTitle={(section) => (<h6 className="suggestion-header">{section.title}</h6>)}
+                    inputProps={{value, onChange: this.onChange, type: "search", placeholder: "Search for stores, brand and more...", className:"form-control"}}
+                  />
                   <i className="fa fa-search"></i>
                 </Col>
                 { loggedIn ?
