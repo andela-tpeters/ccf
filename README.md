@@ -1,3 +1,2 @@
-# Coupon Coolers
+# FrontEnd Design in React
 
-Front end codebase for the coupon coolers platform
